@@ -1,3 +1,4 @@
+import { Bugfender } from '@bugfender/sdk';
 
 export const datos = [];
 const url = 'https://a24-dpl-nu1h.onrender.com/api/bicicletas';
@@ -9,10 +10,11 @@ const callApi = () => {
             datos.push(data);
         })
         .catch(err => {
-            console.error('Error:', err);
+            Bugfender.error('Error:', err);
+
         })
 
-    console.log(datos)
+    Bugfender.log('Datos:', datos);
 
 }
 
